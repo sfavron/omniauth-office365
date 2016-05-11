@@ -1,4 +1,4 @@
-require 'omniauth/windowslive'
+require 'omniauth/office365'
 require 'bundler/setup'
 require 'coveralls'
 

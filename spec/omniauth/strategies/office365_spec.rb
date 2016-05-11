@@ -1,14 +1,14 @@
 require 'spec_helper'
 
-describe OmniAuth::Strategies::Windowslive do
+describe OmniAuth::Strategies::Office365 do
   subject do
-    OmniAuth::Strategies::Windowslive.new(nil, @options || {})
+    OmniAuth::Strategies::Office365.new(nil, @options || {})
   end
 
   it_should_behave_like 'an oauth2 strategy'
 
   describe '#client' do
-    it 'should have the correct Windowslive site' do
+    it 'should have the correct Office365 site' do
       subject.client.site.should eq("https://login.live.com")
     end
 
@@ -23,7 +23,7 @@ describe OmniAuth::Strategies::Windowslive do
 
   describe '#callback_path' do
     it 'should have the correct callback path' do
-      subject.callback_path.should eq('/auth/windowslive/callback')
+      subject.callback_path.should eq('/auth/office365/callback')
     end
   end
 end
