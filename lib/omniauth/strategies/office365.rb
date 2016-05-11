@@ -8,7 +8,7 @@ module OmniAuth
 
       option :client_options, {
         site:          'https://login.live.com',
-        authorize_url: '/oauth20_authorize.srf',
+        authorize_url: '/oauth20_desktop.srf',
         token_url:     '/oauth20_token.srf'
       }
 
@@ -17,6 +17,10 @@ module OmniAuth
       }
 
       option :name, 'office365'
+
+      def callback_url
+        full_host + script_name + callback_path
+      end
     end
   end
 end
